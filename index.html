@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .center {
+            margin: auto;
+            width: fit-content;
+        }
+
+        .circle {
+            border: solid 3px;
+            width: 30px;
+            height: 30px;
+            border-radius: 100px;
+            background-color: gray;
+        }
+
+        .box {
+            border: solid 3px;
+            width: fit-content;
+            background-color: black;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .green {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="center">trafikklys</h1>
+    <br>
+
+    <div class="box center">
+        <div class="circle" id="red"></div>
+        <div class="circle" id="yellow"></div>
+        <div class="circle" id="green"></div>
+    </div>
+    <br>
+
+    <div class="center">
+        <button onclick="changeLight('red')">Rødt</button>
+        <button onclick="changeLight('yellow')">Gult</button>
+        <button onclick="changeLight('green')">Grønt</button>
+        <button onclick="autoChanger()">Auto</button>
+    </div>
+
+    <script>
+
+        function changeLight(color) {
+            document.getElementById(color).classList.toggle(color)
+        }
+
+        function autoChanger() {
+            setTimeout(() => changeLight('red'), 1000)
+
+            setTimeout(() => changeLight('red'), 2000)
+
+            setTimeout(() => changeLight('yellow'), 2000)
+
+            setTimeout(() => changeLight('yellow'), 3000)
+
+            setTimeout(() => changeLight('green'), 3000)
+
+            setTimeout(() => changeLight('green'), 4000)
+        }
+
+    </script>
+
+</body>
+
+</html>
